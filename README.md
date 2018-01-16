@@ -97,12 +97,12 @@ In code cell 19, data is normalized using StandardScaler() and then data is divi
 
 In code cell 21, LinearSVC was used to train the data . It took about 19.95 seconds to train SVC for feature vector length of 8460. After that, trained classifier is tried on test data to compute accuracy. I played with different parameters like color_space , hog_channel . My observations are given below :-    
 
-With color_space = 'RGB' and hog_channel = 0 gave Test_Accuracy = 97.4 %, Feature vector length = 4932 
-With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 97.62 % , Feature vector length = 4932 
-With color_space = 'RGB' and hog_channel = 0 gave Test_Accuracy = 98.14 %, Feature vector length = 8460 
-With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 99.13 %, Feature vector length = 8460
-
-I finally settled on color_space = YCrCb and hog channel =ALL and it gave me accuracy = 99.13%
+With color_space = 'RGB' and hog_channel = 0 gave Test_Accuracy = 97.4 %, Feature vector length = 4932     
+With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 97.62 % , Feature vector length = 4932     
+With color_space = 'RGB' and hog_channel = 0 gave Test_Accuracy = 98.14 %, Feature vector length = 8460    
+With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 99.13 %, Feature vector length = 8460    
+    
+I finally settled on color_space = YCrCb and hog channel =ALL and it gave me accuracy = 99.13%     
 
 The classifer training log is as follows.
 
