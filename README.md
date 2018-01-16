@@ -57,7 +57,7 @@ Here are examples using the `YCrCb` color space and HOG parameters of `orientati
 
 ![alt text][image2]    
      
-#### 2. Explain how you settled on your final choice of HOG parameters.
+#### 2. Final choice of HOG parameters.
 
 Various parameters can be adjusted to get better performance such as :
 
@@ -86,7 +86,7 @@ After experimenting with a lot of parameters and measuring the accuracy and eval
 It makes more sense to use (8x8) pixels per cell for a 64x64 training image. After trying different orientations like 6, 8 and 9, all of giving reasonable results, the alignment of gradients in hog visualization with orientation, 9 was able to clearly differentiate between car and non -cars. So, I chose 9 as orientation.
 
 
-#### 3. Training of  classifier using your selected HOG features (and color features if you used them).
+#### 3. Training of classifier using selected HOG features (and color features if used).
 
 
 The code for training classifier is provided in code cell (18 -21) under the heading `Training the classifier`. In code cell 18, features are extracted from training data using extract_features which uses hog features , binned color features and histogram of all color channelst to compute a 1-D feature array for a training image. 
@@ -133,7 +133,7 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 
 ### Video Implementation
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+#### 1. Link to your final video output.  
 Here's a [link to my video result](./project_video_output.mp4)
 
 
