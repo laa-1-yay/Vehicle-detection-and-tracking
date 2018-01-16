@@ -86,13 +86,13 @@ After experimenting with a lot of parameters and measuring the accuracy and eval
 | cell_per_block | 2 |
 | hog_channel  | 'ALL' |
 
-It makes more sense to use (8x8) pixels per cell for a 64x64 training image. After trying different orientations like 6, 8 and 9, all of giving reasonable results, the alignment of gradients in hog visualization with orientation, 9 was able to clearly differentiate between car and non -cars. So, I chose 9 as orientation.
+It makes more sense to use (8x8) pixels per cell for a 64x64 training image. After trying different orientations like 6, 8 and 9, all of giving reasonable results, the alignment of gradients in hog visualization with orientation, 9 was able to clearly differentiate between car and non -cars. So 9 was chosen.
 
 
 #### 3. Training of classifier using selected HOG features (and color features if used).
 
 
-The code for training classifier is provided in code cell (18 -21) under the heading `Training the classifier`. In code cell 18, features are extracted from training data using extract_features which uses hog features , binned color features and histogram of all color channelst to compute a 1-D feature array for a training image. 
+The code for training classifier is provided in code cell (18 - 21) under the heading `Training the classifier`. In code cell 18, features are extracted from training data using extract_features which uses hog features , binned color features and histogram of all color channelst to compute a 1-D feature array for a training image. 
 
 The concatenated feature data are normalized by calling `StandardScaler` from `sklearn.preprocessing` library and shuffled and divided into training and test dataset in `train_test_split()` function.     
 
@@ -123,7 +123,7 @@ Test Accuracy of SVC =  0.9901
 
 I used find_cars function in the 23rd cell, which first extracted all the hog features from an image and then subsampled the image to divide it into different overlaying windows for which the trained classifer LinearSVC was used to predict whether the car existed in a window and if vehicle is detected.
 
-An image is then given as output with a boxes drawn over the vehicle. Scale parameter was used to select the size of sliding window and cell per step defined the overlap between windows. 
+An image is then given as output with boxes drawn over the vehicle. Scale parameter is used to select the size of sliding window and cell per step defined the overlap between windows. 
 
 Cell per step of 2 was used which is equivalent to window overalap of 75%. This is faster than method which first finds windows to search using siding window and then computes hog features from each search window.
 
@@ -146,7 +146,7 @@ The process_image() function in cell number 25 explains the pipeline which emplo
 
 Here's an example result showing the heatmap from a series of frames of video, and the final output with the bounding boxes then overlaid on the frames of video .  
 
-`heatmap_threshold` is set to one. Therefore, you can observe in the last image the false positive on the extreme left of the image (other lane) is avoided since only one window is used to enclose it. Therefore, threshold is applied and it is not shown in the final ouput.
+Note that : `heatmap_threshold` is set to one. Therefore, you can observe in the last image the false positive on the extreme left of the image (other lane) is avoided since only one window is used to enclose it. Therefore, threshold is applied and it is not shown in the final ouput.
 
 ### Here are six frames and their corresponding heatmaps:
     
