@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [image1]: ./examples/car_not_car.png
 [image2]: ./examples/hog.png
-[image4]: ./examples/sliding_window.jpg
+[image4]: ./examples/sliding_window.png
 [image6]: ./examples/bboxes_and_heat.png
 [image7]: ./examples/HOC.png
 [image8]: ./examples/spatial_binning.png
@@ -26,7 +26,7 @@ The whole code is present in the file `vehicle_tracking.ipynb`
 
 The color channels of an image in a color space can be divided into bins, which represent color combinations of a car or notcar image to train classifier on. 
 
-Here is an example :   
+Here is an example of RGB channel color histogram :   
 
 
 ![alt text][image7]
@@ -100,9 +100,9 @@ In code cell 21, LinearSVC was used to train the data . It took about 19.95 seco
 With color_space = 'RGB' and hog_channel = 0 gave Test_Accuracy = 97.4 %, Feature vector length = 4932     
 With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 97.62 % , Feature vector length = 4932     
 With color_space = 'RGB' and hog_channel = 0 gave Test_Accuracy = 98.14 %, Feature vector length = 8460    
-With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 99.13 %, Feature vector length = 8460    
+With color_space = 'YCrCb' and hog channel = ALL gave Test_Accuracy = 99.01 %, Feature vector length = 8460    
     
-I finally settled on color_space = YCrCb and hog channel =ALL and it gave me accuracy = 99.13%     
+I finally settled on color_space = YCrCb and hog channel =ALL and it gave me accuracy = 99.01%     
 
 The classifer training log is as follows.
 
@@ -111,7 +111,7 @@ No. of data points 17760
 No. of features 8460
 Feature vector length: 8460
 10.99 Seconds to train SVC...
-Test Accuracy of SVC =  0.9913
+Test Accuracy of SVC =  0.9901
 ```
 
 ### Sliding Window Search
@@ -160,14 +160,14 @@ Problems :
 
 - False positives for objects like trees.
 - Failure for non trained objects like pedestrians. 
-- In the bright color patch of the road, detection of white car is difficult.
-- Pipeline tends to fail under shadows, on bright roads,night, rain, snow, fog.
+- Detection of white car is difficult in the bright color patch of the road.
+- Failure under shadows, bright roads, night, rain, snow, fog.
 
 Improvements:
 
 - Experimenting with different classifier. E.g. Decision Tree
-- Do better in presence of shadows, bright light, and night
+- Do better in presence of shadows, bright light, and night.
 - Use previous video frames and keep track of detected vehicles using averaging technique on previous frames.
 - Train on multiple types of vehicles like cycles, trucks, motorbikes to simplify learning and classification.
-- Augmented of dataset to improve accuracy.
-- Stabilizing the fluctuation in the detected boxes.
+- Augmentation of dataset for better results.
+- Stabilizing the disturbance in the detected boxes.
