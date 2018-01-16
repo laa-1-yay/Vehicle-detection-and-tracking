@@ -20,7 +20,9 @@ The goals / steps of this project are the following:
 [image8]: ./examples/spatial_binning.png
 [video1]: ./project_video.mp4
 
-The whole code is present in the file `vehicle_tracking.ipynb`
+
+The whole code is present in the file 
+#### vehicle_tracking.ipynb
 
 ### Color Histogram:
 
